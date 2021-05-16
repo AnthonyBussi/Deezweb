@@ -1,0 +1,200 @@
+/****** BARRE DE RECHERCHE ******/
+#search {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 0 50px;
+}
+#search *:not(:first-child) {
+    margin-left: 1em;
+}
+button {
+    border: none;
+    color: white;
+    background-color: #57A773;
+    display: block;
+    font-weight: bold;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+input[type="text"] {
+    min-width: 50%;
+    padding: 0.5em 0 0.5em 1em;
+    margin-bottom: 6px;
+}
+select{
+    border: none;
+    margin-bottom: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+}
+select option{
+    font-style: italic;
+    color: white;
+    background-color: var(--primary-color);
+    border: 1px solid white;
+}
+
+#welcome {
+    text-align: center;
+    margin-bottom: 50px;
+}
+#welcome h2 {
+    margin-bottom: 35px;
+}
+
+/****** LISTE DES RESULTATS ******/
+#resultsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.searchResult {
+    width: 350px;
+    padding: 30px 20px;
+    margin: 20px;
+    border-radius: 50px;
+    background: #242423;
+    box-shadow:  20px 20px 60px #151514, -20px -20px 60px #333332;
+}
+
+.searchResult .detailsResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.searchResult .resultLink {
+    width: 80%;
+    margin: 0 auto 0.8em auto;
+}
+.searchResult .detailsResult img{
+    max-width: 90%;
+}
+.searchResult .detailsResult h3{
+    margin: 30px 0 20px;
+}
+.searchResult .detailsResult h4{
+    margin: 0.8em 0;
+}
+.searchResult .detailsResult p{
+    margin: 0.3em 0;
+}
+.searchResult #favoriteButton {
+    color: var(--favourite-color);
+    background-color: transparent;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0.8em auto;
+}
+.searchResult #favoriteButton i {
+    margin: 0;
+}
+.searchResult #favoriteButton .icon svg {
+    width: 30px;
+}
+.searchResult #favoriteButton .icon svg path {
+    fill: transparent;
+    stroke-width: 20;
+    stroke: var(--favourite-color);
+    stroke-dasharray: 1572;
+    stroke-dashoffset: 0;
+}
+.searchResult #favoriteButton .icon svg:hover path {
+    animation: animate-heart .4s linear forwards;
+}
+.searchResult .resultLinks .resultLink:not(:last-of-type) {
+    margin-bottom: 0.8em;
+}
+.searchResult .resultLinks .resultLink {
+    border: 1px solid var(--bg-color-main);
+    padding: 0.5em;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transition: ease-out .5s;
+}
+.searchResult .resultLinks .resultLink:before {
+    transition: .5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content : "";
+    background-color: var(--primary-color);
+}
+.searchResult .resultLinks .resultLink:hover::before {
+    transition: .5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+}
+.searchResult .resultLinks .resultLink:hover {
+    border: 1px solid var(--primary-color);
+}
+.searchResult .resultLinks .resultLink a {
+    color: white;
+}
+
+
+/****** MESSAGE SI RECHERCHE VIDE *****/
+#emptySearch {
+    text-align: center;
+    color: var(--alert-color);
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+#noResult {
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+
+/****** KEYFRAMES *****/
+@keyframes animate-heart {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 1572;
+    }
+    80% {
+        stroke-dashoffset: 3144;
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 3144;
+        fill: var(--favourite-color);
+    }
+}
+
+
+/****** MEDIA QUERIES *****/
+@media screen and (max-width:1100px) {
+    input[type="text"] {
+        min-width: 100%;
+        padding: 0.5em 0 0.5em 1em;
+        margin-bottom: 6px;
+    }
+}
+@media screen and (max-width:600px) {
+    #search {
+        flex-direction: column;
+    }
+    #search input, #search #param-search {
+        margin-left: 0;
+        margin-bottom: 2.5em;
+    }
+    #search #searchButton {
+        margin: 0
+    }
+}

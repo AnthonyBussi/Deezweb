@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/****** DECLARATION DES VARIABLES ******/
+:root {
+    --bg-color-main: #242423;
+    --bg-color-secondary: #242423;
+    --bg-color-light: #8D918D;
+    --primary-color: #57A773;
+    --primary-color-dark: #386B4A;
+    --secondary-color: #F6F8F2;
+    --favourite-color: #E11439;
+    --alert-color: #FF0022;
+}
+
+/****** DECLARATION GLOBALES ******/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color-main);
+    color: white;
+}
+.container {
+    max-width: 70%;
+    margin: auto;
+    min-height: calc(100vh - 200px);
+    padding: 50px 0;
+}
+h1 {
+    color: var(--primary-color);
+}
+h2 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+}
+a {
+    text-decoration: none;
+}
+i {
+    margin-right: 1em;
+}
+ul li {
+    list-style-type: none;
+}
+input, select, button {
+    outline: none;
+}
+
+/****** BOUTONS DE REDIRECTION VERS DEEZER.COM ******/
+#goOnDeezer {
+    display: block;
+    width: 220px;
+    border-radius: 50px;
+    margin-top: 1em;
+    padding: 0.7em 1em;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    background-color: var(--primary-color-dark);
+    transition: all .4s;
+}
+#goOnDeezer:hover {
+    background-color: var(--primary-color);
+}
+
+
+/****** MEDIA QUERIES *****/
+@media screen and (max-width: 900px) {
+    .container{
+        max-width: 80%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .container{
+        max-width: 90%;
+    }
+}

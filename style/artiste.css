@@ -1,0 +1,84 @@
+#artist-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#info-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-radius: 50px;
+    background: #242423;
+    box-shadow:  20px 20px 44px #181817, -20px -20px 44px #30302f;
+}
+#picture-artist-container {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#picture-artist {
+    border-radius: 50%;
+    width: 450px;
+    transition: all 0.5s;
+}
+#picture-artist:hover {
+    width: 550px;
+}
+#info-artist h2 {
+    font-size: 2.2em;
+}
+#info-artist p {
+    margin: 1.5em 0;
+    font-size: 1.4em;
+}
+
+
+/****** MEDIA QUERIES *****/
+@media screen and (max-width: 1200px) {
+    #picture-artist-container {
+        width: 460px;
+        height: 460px;
+    }
+    #picture-artist {
+        width: 380px;
+    }
+    #picture-artist:hover {
+        width: 460px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #info-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    #picture-artist-container {
+        margin: 1.5em 0 3em 0;
+    }
+}
+@media screen and (max-width: 700px) {
+    #artist-info {
+        padding: 0;
+    }
+    #picture-artist-container {
+        width: 80%;
+        height: 480px;
+    }
+    #picture-artist {
+        width: 80%;
+        transition: all 0.5s;
+    }
+    #picture-artist:hover {
+        width: 100%;
+    }
+    #picture-artist-container {
+        margin: 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    #picture-artist-container {
+        height: 300px;
+    }
+}

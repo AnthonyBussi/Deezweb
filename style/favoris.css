@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+}
+h2 i {
+    margin-left: 0.5em;
+    margin-right: 0;
+    color: var(--favourite-color);
+}
+#messageIfNoFavorite {
+    margin: 4em 0;
+    font-style: italic;
+}
+#favorites-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5em;
+}
+#favorites-list li div {
+    display: flex;
+    align-items: center;
+}
+#favorites-list li div img {
+    border-radius: 50%;
+    margin-right: 2em;
+}
+#favorites-list li div a {
+    color: white;
+}
+#favorites-list li div a:nth-of-type(2) {
+    font-style: italic;
+}
+#favorites-list li button {
+    font-size: 1.3em;
+    border: none;
+    background-color: transparent;
+    color: var(--favourite-color);
+    cursor: pointer;
+}

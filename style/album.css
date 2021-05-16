@@ -1,0 +1,96 @@
+#album-info-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#cover-album-container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cover-album {
+    width: 400px;
+    transition: all 0.2s;
+}
+#album-info-container #info-album #album-artist-info {
+    position: relative;
+    margin: 1em 0 2em 0;
+}
+#album-info-container #info-album #album-artist-info img{
+    border-radius: 50%;
+    width: 70px;
+    margin-right: 0.5em;
+}
+#album-info-container #info-album #album-artist-info a{
+    color: white;
+    margin-left: 0.5em;
+    font-size: 1.2em;
+    position: relative;
+    bottom: 1em;
+}
+#info-album h2 {
+    font-size: 2.5em;
+}
+#info-tracks {
+    margin-top: 2em;
+}
+#info-tracks #nb-tracks {
+    border-bottom: 1px solid var(--primary-color-dark);
+    margin-bottom: 0.5em;
+}
+#info-tracks #nb-tracks p{
+    margin: 0 0 1em 4em;
+}
+#info-tracks #tracks-list {
+    width: 80%;
+    margin: auto;
+}
+#info-tracks #tracks-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+}
+#info-tracks #tracks-list li:hover {
+    background-color: var(--bg-color-main);
+}
+#info-tracks #tracks-list li a {
+    color: white;
+    font-style: italic;
+}
+#info-tracks #tracks-list li span {
+    margin-left: 2em;
+}
+
+
+/****** MEDIA QUERIES *****/
+@media screen and (max-width: 1000px) {
+    #album-info-container {
+        flex-direction: column;
+    }
+    #cover-album-container {
+        margin-bottom: 1.5em;
+    }
+    #info-album {
+        text-align: center;
+    }
+    #info-tracks #tracks-list {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #album-info-container {
+        flex-direction: column;
+    }
+    #cover-album-container {
+        width: 80%;
+    }
+    #cover-album-container img{
+        width: 100%;
+    }
+    #info-album {
+        text-align: center;
+    }
+    
+}
