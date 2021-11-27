@@ -4,7 +4,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 15px 0 50px;
+    padding: 15px 0 30px;
 }
 #search *:not(:first-child) {
     margin-left: 1em;
@@ -152,10 +152,11 @@ select option{
     letter-spacing: 1px;
 }
 
-#noResult {
+#resultLength {
     text-align: center;
     font-size: 1.5em;
     letter-spacing: 1px;
+    margin-bottom: 24px;
 }
 
 

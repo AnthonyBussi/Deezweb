@@ -2,7 +2,7 @@
 const $requestValue = document.querySelector("#request");
 const $order = document.querySelector("#orderBy");
 const $emptySearch = document.querySelector("#emptySearch");
-const $noResult = document.querySelector("#noResult");
+const $resultLength = document.querySelector("#resultLength");
 const $showAlbum = document.querySelector("#showAlbum");
 const $showArtist = document.querySelector("#showArtist");
 const $ctnr = document.querySelector("#resultsContainer");
@@ -10,17 +10,26 @@ const $ctnr = document.querySelector("#resultsContainer");
 document.querySelector("#searchButton").addEventListener("click", () => {
     $ctnr.innerHTML = "";
     $emptySearch.innerHTML = "";
-    $noResult.innerHTML = "";
+    $resultLength.innerHTML = "";
     if($requestValue.value !== "") {
         fetch(`https://api.deezer.com/search?q=${$requestValue.value}&order=${$order.value}`)
         .then(response => response.json())
         .then(result => {
-            if (result.data.length == 0) {
-                
-                $noResult.innerHTML = "Aucun résultat <i class=\"far fa-frown\"></i>";
+
+            // on affiche le nombre de résultat
+            if (result.data.length == 0) {                
+                $resultLength.innerHTML = "Aucun résultat <i class=\"far fa-frown\"></i>";
+            } else if (result.data.length < 2){
+                $resultLength.innerHTML = "1 résultat";
             } else {
-            showResult(result.data);
+                $resultLength.innerHTML = `${result.data.length} résultats`;
             }
+
+            showResult(result.data);
+
+
+
+
         })
         .catch(err => {
             console.log("Une erreur inconnue est survenue");
