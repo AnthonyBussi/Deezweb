@@ -4,12 +4,12 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 15px 0 50px;
+    padding: 15px 0 30px;
 }
 #search *:not(:first-child) {
     margin-left: 1em;
 }
-button {
+button:not(#favoriteButton) {
     border: none;
     color: white;
     background-color: #57A773;
@@ -18,6 +18,15 @@ button {
     padding: 8px 12px;
     margin-bottom: 6px;
     cursor: pointer;
+}
+button#favoriteButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+button#favoriteButton i {
+    margin: 12px 0;
 }
 input[type="text"] {
     min-width: 50%;
@@ -54,6 +63,8 @@ select option{
 }
 
 .searchResult {
+    display: flex;
+    flex-direction: column;
     width: 350px;
     padding: 30px 20px;
     margin: 20px;
@@ -84,7 +95,7 @@ select option{
 .searchResult .detailsResult p{
     margin: 0.3em 0;
 }
-.searchResult #favoriteButton {
+/* .searchResult #favoriteButton {
     color: var(--favourite-color);
     background-color: transparent;
     font-size: 1.5em;
@@ -104,9 +115,14 @@ select option{
     stroke-dasharray: 1572;
     stroke-dashoffset: 0;
 }
+
+.searchResult #favoriteButton .icon.favorite {
+    fill: var(--favourite-color);
+}
+
 .searchResult #favoriteButton .icon svg:hover path {
     animation: animate-heart .4s linear forwards;
-}
+} */
 .searchResult .resultLinks .resultLink:not(:last-of-type) {
     margin-bottom: 0.8em;
 }
@@ -152,10 +168,11 @@ select option{
     letter-spacing: 1px;
 }
 
-#noResult {
+#resultLength {
     text-align: center;
     font-size: 1.5em;
     letter-spacing: 1px;
+    margin-bottom: 24px;
 }
 
 

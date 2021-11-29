@@ -1,6 +1,6 @@
 'use strict';
 // on récupère les infos contenues dans le localStorage
-let storageDataIds = localStorage.getItem("deezweb_anthony_04_12");
+let storageDataIds = localStorage.getItem("deezweb_tracksId");
 let idTracksList = JSON.parse(storageDataIds);
 
 const favoritesList = document.querySelector("#favorites-list");
