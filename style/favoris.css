@@ -1,5 +1,6 @@
-body {
+h2 {
     text-align: center;
+    margin-bottom: 24px;
 }
 h2 i {
     margin-left: 0.5em;
@@ -10,30 +11,32 @@ h2 i {
     margin: 4em 0;
     font-style: italic;
 }
-#favorites-list li {
+#favorites-list .favorite-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2.5em;
+    border-bottom: 1px solid var(--primary-color);
+    padding: 18px;
 }
-#favorites-list li div {
+#favorites-list .favorite-item .favorite-track {
     display: flex;
     align-items: center;
 }
-#favorites-list li div img {
+#favorites-list .favorite-title {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+#favorites-list .favorite-artist {
+    margin-top: 6px;
+    font-size: 12px;
+}
+#favorites-list .favorite-artist-picture {
     border-radius: 50%;
-    margin-right: 2em;
+    width: 64px;
+    height: 64px;
+    margin-right: 12px;
 }
-#favorites-list li div a {
-    color: white;
-}
-#favorites-list li div a:nth-of-type(2) {
-    font-style: italic;
-}
-#favorites-list li button {
-    font-size: 1.3em;
-    border: none;
-    background-color: transparent;
-    color: var(--favourite-color);
-    cursor: pointer;
+
+#favorites-list .favorite-track .favorite-btn {
+
 }

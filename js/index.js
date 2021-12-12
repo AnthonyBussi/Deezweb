@@ -114,7 +114,7 @@ document.querySelector("#searchButton").addEventListener("click", () => {
                 
                     // on ajoute les éléments au favoris au click
                     $favoriteButton.addEventListener("click", () => {
-                        let track_List = localStorage.getItem('tracksIds');
+                        let track_List = localStorage.getItem('deezweb_tracksId');
 
                         //s'il n'y en a pas on crée un tableau | s'il y en a, on transforme la string en tableau
                         track_List = track_List ? JSON.parse(track_List) : [];
@@ -129,7 +129,7 @@ document.querySelector("#searchButton").addEventListener("click", () => {
                             $favoriteButton.style.cssText = "color: var(--favourite-color)"; 
                         }
 
-                        localStorage.setItem('tracksIds', JSON.stringify(track_List)); //on enregistre dans localstorage
+                        localStorage.setItem('deezweb_tracksId', JSON.stringify(track_List)); //on enregistre dans localstorage
                     });
                 }
             })
