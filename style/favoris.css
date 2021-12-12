@@ -37,6 +37,9 @@ h2 i {
     margin-right: 12px;
 }
 
-#favorites-list .favorite-track .favorite-btn {
-
+#favorites-list .favorite-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--favourite-color);
 }

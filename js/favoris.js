@@ -9,7 +9,6 @@ for (let i = 0; i < idTracksList.length; i++) {
     window.fetch(`https://api.deezer.com/track/${idTracksList[i]}`) //infos de l'API
     .then(response => response.json())
     .then(result => {
-        console.log(result);
         //création div parent #trackLike
         const favInfos = document.createElement('div');
         favInfos.setAttribute('id', `trackLike-${i}`);
@@ -28,27 +27,25 @@ for (let i = 0; i < idTracksList.length; i++) {
         `;
 
         //ajout des boutons favoris
-        const $favoriteTrack = document.createElement('button');
-        $favoriteTrack.setAttribute('class', 'favorite-btn');
+        const $favoriteButton = document.createElement('button');
+        $favoriteButton.setAttribute('class', 'favorite-btn');
+        $favoriteButton.innerHTML += '<i class="fas fa-heart"></i>';
 
-        favInfos.appendChild($favoriteTrack);
+        favInfos.appendChild($favoriteButton);
 
         //event au clic sur le bouton
-        $favoriteTrack.addEventListener("click", () => {
+        $favoriteButton.addEventListener("click", () => {
             let storageDataIds = localStorage.getItem('deezweb_tracksId');
-            idTracksList = JSON.parse(storageDataIds);
+            storageDataIds = JSON.parse(storageDataIds);
 
             //suppression du localStorage
             storageDataIds.splice(storageDataIds.indexOf(idTracksList[i]), 1);
-            localStorage.setItem('deezweb_tracksId', JSON.stringify(idTracksList));
+            localStorage.setItem('deezweb_tracksId', JSON.stringify(storageDataIds));
             
             //suppression du DOM
             document.querySelector(`#trackLike-${i}`).remove();
         });
 
-        // let trackLike = document.querySelector(`#trackLike-${i}`);
-        // let trackTitle = document.querySelector(`#trackTitle-${i}`);
-        // trackLike.insertBefore($favoriteTrack, trackTitle);
     });
 }
 
