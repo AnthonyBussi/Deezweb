@@ -95,34 +95,6 @@ select option{
 .searchResult .detailsResult p{
     margin: 0.3em 0;
 }
-/* .searchResult #favoriteButton {
-    color: var(--favourite-color);
-    background-color: transparent;
-    font-size: 1.5em;
-    text-align: center;
-    margin: 0.8em auto;
-}
-.searchResult #favoriteButton i {
-    margin: 0;
-}
-.searchResult #favoriteButton .icon svg {
-    width: 30px;
-}
-.searchResult #favoriteButton .icon svg path {
-    fill: transparent;
-    stroke-width: 20;
-    stroke: var(--favourite-color);
-    stroke-dasharray: 1572;
-    stroke-dashoffset: 0;
-}
-
-.searchResult #favoriteButton .icon.favorite {
-    fill: var(--favourite-color);
-}
-
-.searchResult #favoriteButton .icon svg:hover path {
-    animation: animate-heart .4s linear forwards;
-} */
 .searchResult .resultLinks .resultLink:not(:last-of-type) {
     margin-bottom: 0.8em;
 }
@@ -175,26 +147,6 @@ select option{
     margin-bottom: 24px;
 }
 
-
-/****** KEYFRAMES *****/
-@keyframes animate-heart {
-    0% {
-        stroke-dashoffset: 0;
-    }
-    40% {
-        stroke-dashoffset: 1572;
-    }
-    80% {
-        stroke-dashoffset: 3144;
-        fill: transparent;
-    }
-    100% {
-        stroke-dashoffset: 3144;
-        fill: var(--favourite-color);
-    }
-}
-
-
 /****** MEDIA QUERIES *****/
 @media screen and (max-width:1100px) {
     input[type="text"] {
@@ -215,3 +167,5 @@ select option{
         margin: 0
     }
 }
+
+/****** LIGHT MODE *****/

@@ -3,7 +3,6 @@
 /****** DECLARATION DES VARIABLES ******/
 :root {
     --bg-color-main: #242423;
-    --bg-color-secondary: #242423;
     --bg-color-light: #8D918D;
     --primary-color: #57A773;
     --primary-color-dark: #386B4A;
@@ -22,6 +21,9 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg-color-main);
     color: white;
+}
+body.light-theme  {
+    background-color: var(--secondary-color);
 }
 .container {
     max-width: 70%;
@@ -48,6 +50,27 @@ ul li {
 input, select, button {
     outline: none;
 }
+
+/****** THEME CLAIR/SOMBRE ******/
+#theme-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+}
+
+#theme-button i {
+    margin: 0;
+}
+
 
 /****** BOUTONS DE REDIRECTION VERS DEEZER.COM ******/
 #goOnDeezer {
