@@ -143,3 +143,24 @@ document.querySelector("#searchButton").addEventListener("click", () => {
         resultLength.innerHTML = '';
     }
 });
+
+fetch(`https://api.deezer.com/chart/`)
+    .then(response => response.json())
+    .then(result => {       
+        console.log(result); 
+        // $artistInfo.innerHTML += `
+        // <div id="info-container">
+        //     <div id="picture-artist-container">
+        //         <img src="${result.picture_big}" alt="${result.name}" id="picture-artist">
+        //     </div>
+        //     <div id="info-artist">
+        //         <h2>${result.name}</h2>
+        //         <p>${result.nb_album} albums</p>
+        //         <p>${result.nb_fan} fans</p>
+        //         <a href="${result.link}" id="goOnDeezer" target="_blank">Voir sur Deezer</a>
+        //     </div>                
+        // </div>                
+        // `;
+    })
+
+

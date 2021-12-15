@@ -8,7 +8,8 @@ const $artistInfo = document.querySelector("#artist-info");
 
 fetch(`https://api.deezer.com/artist/${artistId}`)
     .then(response => response.json())
-    .then(result => {        
+    .then(result => {       
+        console.log(result); 
         $artistInfo.innerHTML += `
         <div id="info-container">
             <div id="picture-artist-container">

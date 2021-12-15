@@ -10,6 +10,7 @@ const $nbTracks = document.querySelector("#nb-tracks");
 fetch(`https://api.deezer.com/album/${albumId}`)
     .then(response => response.json())
     .then(result => {        
+        console.log(result);
         $albumInfo.innerHTML += `
         <div id="album-info-container">
             <div id="cover-album-container">

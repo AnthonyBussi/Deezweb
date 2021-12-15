@@ -13,11 +13,11 @@ function convertTime(duration) {
 
 // changement de theme
 
-const themeBtn = document.querySelector("#theme-button");
-const body = document.querySelector('body');
+// const themeBtn = document.querySelector("#theme-button");
+// const body = document.querySelector('body');
 
-function changeTheme() {
-    body.classList.toggle("light-theme");
-}
+// function changeTheme() {
+//     body.classList.toggle("light-theme");
+// }
 
-themeBtn.addEventListener("click", changeTheme);
+// themeBtn.addEventListener("click", changeTheme);

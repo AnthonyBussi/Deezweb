@@ -9,6 +9,7 @@ const $trackInfo = document.querySelector("#track-info");
 fetch(`https://api.deezer.com/track/${trackId}`)
     .then(response => response.json())
     .then(result => {        
+        console.log(result);
         $trackInfo.innerHTML += `
         <div id="track-container">            
             <img src="${result.album.cover_medium}">
