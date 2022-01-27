@@ -7,7 +7,7 @@ const albumId = urlParam.get("id");
 const $albumInfo = document.querySelector("#album-info");
 const $nbTracks = document.querySelector("#nb-tracks");
 
-fetch(`https://api.deezer.com/album/${albumId}`)
+fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/album/${albumId}`)
     .then(response => response.json())
     .then(result => {        
         console.log(result);

@@ -6,7 +6,7 @@ const artistId = urlParam.get("id");
 
 const $artistInfo = document.querySelector("#artist-info");
 
-fetch(`https://api.deezer.com/artist/${artistId}`)
+fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}`)
     .then(response => response.json())
     .then(result => {       
         console.log(result); 

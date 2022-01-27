@@ -6,7 +6,7 @@ let idTracksList = JSON.parse(storageDataIds);
 
 for (let i = 0; i < idTracksList.length; i++) {
 
-    window.fetch(`https://api.deezer.com/track/${idTracksList[i]}`) //infos de l'API
+    window.fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/track/${idTracksList[i]}`) //infos de l'API
     .then(response => response.json())
     .then(result => {
         //création div parent #trackLike

@@ -6,7 +6,7 @@ const trackId = urlParam.get("id");
 
 const $trackInfo = document.querySelector("#track-info");
 
-fetch(`https://api.deezer.com/track/${trackId}`)
+fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/track/${trackId}`)
     .then(response => response.json())
     .then(result => {        
         console.log(result);
