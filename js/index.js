@@ -10,6 +10,9 @@ let searchError = document.querySelector('#search-error');
 
 let artistsUne = document.querySelector('#artistsUne');
 let albumsUne = document.querySelector('#albumsUne');
+let tracksUne = document.querySelector('#tracksUne');
+let playlistsUne = document.querySelector('#playlistsUne');
+let podcastsUne = document.querySelector('#podcastsUne');
 
 document.querySelector("#searchButton").addEventListener("click", () => {
     if (requestValue.value) {
@@ -169,7 +172,6 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
         console.log(resAlbums);
 
         // Affichage des albums à la une
-
         for (let i = 0; i < resAlbumsLength; i++) {
             albumsUne.innerHTML += `
             <div style="display: flex; align-items: center;">
@@ -179,14 +181,39 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
             </div>
             `;
         }
-
         // Affichage des artistes à la une
-
         for (let i = 0; i < resArtistsLength; i++) {
             artistsUne.innerHTML += `
             <div style="display: flex; align-items: center;">
                 <img src="${ resArtists[i].picture_small }" alt=${ resArtists[i].name }>
                 <a href="/pages/artiste.html?id=${resArtists[i].id}">${ resArtists[i].name }</a>
+            </div>
+            `;
+        }
+        // Affichage des chansons  à la une
+        for (let i = 0; i < resTracksLength; i++) {
+            tracksUne.innerHTML += `
+            <div style="display: flex; align-items: center;">
+                <img src="${ resTracks[i].artist.picture_small }" alt=${ resTracks[i].artist.name }>
+                <a href="/pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].title }</a>
+            </div>
+            `;
+        }
+        // Affichage des playlists  à la une
+        for (let i = 0; i < resPlaylistsLength; i++) {
+            playlistsUne.innerHTML += `
+            <div style="display: flex; align-items: center;">
+                <img src="${ resPlaylists[i].picture_small }" alt=${ resPlaylists[i].title }>
+                <a href="#">${ resPlaylists[i].title }</a>
+            </div>
+            `;
+        }
+        // Affichage des podcasts  à la une
+        for (let i = 0; i < resPodcastsLength; i++) {
+            podcastsUne.innerHTML += `
+            <div style="display: flex; align-items: center;">
+                <img src="${ resPodcasts[i].picture_small }" alt=${ resPodcasts[i].title }>
+                <a href="${ resPodcasts[i].link }">${ resPodcasts[i].title }</a>
             </div>
             `;
         }
