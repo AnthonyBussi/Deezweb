@@ -2,7 +2,7 @@
 
 /****** DECLARATION DES VARIABLES ******/
 :root {
-    --bg-color-main: #242423;
+    --bg-color-main: #121218;
     --bg-color-light: #8D918D;
     --primary-color: #57A773;
     --primary-color-dark: #386B4A;
@@ -22,9 +22,9 @@ body {
     background-color: var(--bg-color-main);
     color: white;
 }
-body.light-theme  {
+/* body.light-theme  {
     background-color: var(--secondary-color);
-}
+} */
 .container {
     max-width: 70%;
     margin: auto;
