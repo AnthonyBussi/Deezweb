@@ -176,8 +176,8 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
             albumsUne.innerHTML += `
             <div style="display: flex; align-items: center;">
                 <img src="${ resAlbums[i].cover_small }" alt=${resAlbums[i].title}>
-                <a href="/pages/album.html?id=${ resAlbums[i].id }">${ resAlbums[i].title }</a>
-                <a href="/pages/artiste.html?id=${resAlbums[i].artist.id }">${ resAlbums[i].artist.name }</a>
+                <a href="pages/album.html?id=${ resAlbums[i].id }">${ resAlbums[i].title }</a>
+                <a href="pages/artiste.html?id=${resAlbums[i].artist.id }">${ resAlbums[i].artist.name }</a>
             </div>
             `;
         }
@@ -186,7 +186,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
             artistsUne.innerHTML += `
             <div style="display: flex; align-items: center;">
                 <img src="${ resArtists[i].picture_small }" alt=${ resArtists[i].name }>
-                <a href="/pages/artiste.html?id=${resArtists[i].id}">${ resArtists[i].name }</a>
+                <a href="pages/artiste.html?id=${resArtists[i].id}">${ resArtists[i].name }</a>
             </div>
             `;
         }
@@ -195,7 +195,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
             tracksUne.innerHTML += `
             <div style="display: flex; align-items: center;">
                 <img src="${ resTracks[i].artist.picture_small }" alt=${ resTracks[i].artist.name }>
-                <a href="/pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].title }</a>
+                <a href="pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].title }</a>
             </div>
             `;
         }
