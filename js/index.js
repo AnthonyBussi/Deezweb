@@ -55,18 +55,24 @@ document.querySelector("#searchButton").addEventListener("click", () => {
                     let newImage = document.createElement("img");
                     newImage.setAttribute("src", resultData[i].album.cover);
                     newImage.setAttribute("alt", resultData[i].album.title);
-                    let newTitle = document.createElement("h3");
+
+                    let newTitle = document.createElement("a");
+                    newTitle.setAttribute("href", `pages/titre.html?id=${trackId}`);
                     newTitle.innerHTML += `
                         ${resultData[i].title}
                     `;
-                    let newArtistName = document.createElement("h4");
+
+                    let newArtistName = document.createElement("a");
+                    newArtistName.setAttribute("href", `pages/artiste.html?id=${artistId}`);
                     newArtistName.innerHTML += `
                         ${resultData[i].artist.name}
                     `;
-                    let newAlbumTitle = document.createElement("p");
+                    let newAlbumTitle = document.createElement("a");
+                    newAlbumTitle.setAttribute("href", `pages/album.html?id=${albumId}`)
                     newAlbumTitle.innerHTML += `
                         ${resultData[i].album.title}
                     `;
+
                     let newTrackDuration = document.createElement("p");
                     newTrackDuration.innerHTML += `
                         ${convertTime(resultData[i].duration)}
@@ -76,26 +82,14 @@ document.querySelector("#searchButton").addEventListener("click", () => {
                     $favoriteButton.setAttribute("id", "favoriteButton");
                     $favoriteButton.innerHTML += '<i class="far fa-heart"></i>';
 
-                    let newResultLinks = document.createElement("div");
-                    newResultLinks.classList.add("resultLinks");
-                    let newResultLinkTrack = document.createElement("div");
-                    newResultLinkTrack.classList.add("resultLink");
-                    newResultLinkTrack.setAttribute("id", "listenTrack");
-                    newResultLinkTrack.innerHTML += `
-                        <a href="pages/titre.html?id=${trackId}">Ecouter un extrait</a>
-                    `;
-                    let newResultLinkAlbum = document.createElement("div");
-                    newResultLinkAlbum.classList.add("resultLink");
-                    newResultLinkAlbum.setAttribute("id", "showAlbum");
-                    newResultLinkAlbum.innerHTML += `
-                        <a href="pages/album.html?id=${albumId}">Voir l'album</a>
-                    `;
-                    let newResultLinkArtist = document.createElement("div");
-                    newResultLinkArtist.classList.add("resultLink");
-                    newResultLinkArtist.setAttribute("id", "showArtist");
-                    newResultLinkArtist.innerHTML += `
-                        <a href="pages/artiste.html?id=${artistId}">Voir l'artiste</a>
-                    `;
+                    // let newResultLinks = document.createElement("div");
+                    // newResultLinks.classList.add("resultLinks");
+                    // let newResultLinkTrack = document.createElement("div");
+                    // newResultLinkTrack.classList.add("resultLink");
+                    // newResultLinkTrack.setAttribute("id", "listenTrack");
+                    // newResultLinkTrack.innerHTML += `
+                    //     <a href="pages/titre.html?id=${trackId}">Ecouter un extrait</a>
+                    // `;
 
                     // on insère les détails des résultats dans l'élément parent
                     newResultDetails.appendChild(newImage);
@@ -106,14 +100,12 @@ document.querySelector("#searchButton").addEventListener("click", () => {
                     newResultDetails.appendChild(newTrackDuration);
                     
                     // on ajoute les 3 liens dans l'élément parent
-                    newResultLinks.appendChild(newResultLinkTrack);
-                    newResultLinks.appendChild(newResultLinkAlbum);
-                    newResultLinks.appendChild(newResultLinkArtist);
+                    // newResultLinks.appendChild(newResultLinkTrack);
 
                     // on insère les éléments dans la carte
                     newResult.appendChild(newResultDetails);
                     newResult.appendChild($favoriteButton);
-                    newResult.appendChild(newResultLinks);
+                    // newResult.appendChild(newResultLinks);
 
                     // on insère le nouveau résultat dans le container
                     resultContainer.appendChild(newResult);
@@ -139,9 +131,9 @@ document.querySelector("#searchButton").addEventListener("click", () => {
                     });
                 }
             })
-            .catch(err => {
-                console.log("Une erreur inconnue est survenue");
-            })
+            // .catch(err => {
+            //     console.log("Une erreur inconnue est survenue");
+            // })
     }
     else {
         searchError.innerHTML = "<h2>Aucun résultat</h2>"; //gestion de l'erreur "recherche vide"
