@@ -26,7 +26,7 @@ document.querySelector("#searchButton").addEventListener("click", () => {
 
                 //si recherche sans résultat ou mauvaise recherche
                 if (resDataLength == 0) {
-                    resultLength.innerHTML = "I n'y a aucun résultat";
+                    resultLength.innerHTML = "Il n'y a aucun résultat";
                 }
                 else {
                 //afficher nombre de résultats
@@ -157,49 +157,53 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
         // Affichage des albums à la une
         for (let i = 0; i < resAlbumsLength; i++) {
             albumsUne.innerHTML += `
-            <div style="display: flex; align-items: center;">
+            <div class="">
                 <img src="${ resAlbums[i].cover_small }" alt=${resAlbums[i].title}>
                 <a href="pages/album.html?id=${ resAlbums[i].id }">${ resAlbums[i].title }</a>
                 <a href="pages/artiste.html?id=${resAlbums[i].artist.id }">${ resAlbums[i].artist.name }</a>
             </div>
             `;
         }
+
         // Affichage des artistes à la une
-        for (let i = 0; i < resArtistsLength; i++) {
-            artistsUne.innerHTML += `
-            <div style="display: flex; align-items: center;">
-                <img src="${ resArtists[i].picture_small }" alt=${ resArtists[i].name }>
-                <a href="pages/artiste.html?id=${resArtists[i].id}">${ resArtists[i].name }</a>
-            </div>
-            `;
-        }
+        // for (let i = 0; i < resArtistsLength; i++) {
+        //     artistsUne.innerHTML += `
+        //     <div style="display: flex; align-items: center;">
+        //         <img src="${ resArtists[i].picture_small }" alt=${ resArtists[i].name }>
+        //         <a href="pages/artiste.html?id=${resArtists[i].id}">${ resArtists[i].name }</a>
+        //     </div>
+        //     `;
+        // }
+
         // Affichage des chansons  à la une
-        for (let i = 0; i < resTracksLength; i++) {
-            tracksUne.innerHTML += `
-            <div style="display: flex; align-items: center;">
-                <img src="${ resTracks[i].artist.picture_small }" alt=${ resTracks[i].artist.name }>
-                <a href="pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].title }</a>
-            </div>
-            `;
-        }
+        // for (let i = 0; i < resTracksLength; i++) {
+        //     tracksUne.innerHTML += `
+        //     <div style="display: flex; align-items: center;">
+        //         <img src="${ resTracks[i].artist.picture_small }" alt=${ resTracks[i].artist.name }>
+        //         <a href="pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].title }</a>
+        //     </div>
+        //     `;
+        // }
+
         // Affichage des playlists  à la une
-        for (let i = 0; i < resPlaylistsLength; i++) {
-            playlistsUne.innerHTML += `
-            <div style="display: flex; align-items: center;">
-                <img src="${ resPlaylists[i].picture_small }" alt=${ resPlaylists[i].title }>
-                <a href="#">${ resPlaylists[i].title }</a>
-            </div>
-            `;
-        }
+        // for (let i = 0; i < resPlaylistsLength; i++) {
+        //     playlistsUne.innerHTML += `
+        //     <div style="display: flex; align-items: center;">
+        //         <img src="${ resPlaylists[i].picture_small }" alt=${ resPlaylists[i].title }>
+        //         <a href="#">${ resPlaylists[i].title }</a>
+        //     </div>
+        //     `;
+        // }
+
         // Affichage des podcasts  à la une
-        for (let i = 0; i < resPodcastsLength; i++) {
-            podcastsUne.innerHTML += `
-            <div style="display: flex; align-items: center;">
-                <img src="${ resPodcasts[i].picture_small }" alt=${ resPodcasts[i].title }>
-                <a href="${ resPodcasts[i].link }">${ resPodcasts[i].title }</a>
-            </div>
-            `;
-        }
+        // for (let i = 0; i < resPodcastsLength; i++) {
+        //     podcastsUne.innerHTML += `
+        //     <div style="display: flex; align-items: center;">
+        //         <img src="${ resPodcasts[i].picture_small }" alt=${ resPodcasts[i].title }>
+        //         <a href="${ resPodcasts[i].link }">${ resPodcasts[i].title }</a>
+        //     </div>
+        //     `;
+        // }
     })
 
 

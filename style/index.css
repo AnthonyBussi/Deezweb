@@ -47,14 +47,6 @@ select option{
     border: 1px solid white;
 }
 
-#welcome {
-    text-align: center;
-    margin-bottom: 50px;
-}
-#welcome h2 {
-    margin-bottom: 35px;
-}
-
 /****** LISTE DES RESULTATS ******/
 #resultsContainer {
     display: flex;
@@ -134,5 +126,3 @@ select option{
         margin: 0
     }
 }
-
-/****** LIGHT MODE *****/
