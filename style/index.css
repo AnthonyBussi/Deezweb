@@ -68,9 +68,9 @@ select option{
     width: 350px;
     padding: 30px 20px;
     margin: 20px;
-    border-radius: 50px;
-    background: #242423;
-    box-shadow:  20px 20px 60px #151514, -20px -20px 60px #333332;
+    border-radius: 24px;
+    border: 1px solid white;
+    /* background: #242423; */
 }
 
 .searchResult .detailsResult {
@@ -79,58 +79,25 @@ select option{
     align-items: center;
     text-align: center;
 }
-.searchResult .resultLink {
+/* .searchResult .resultLink {
     width: 80%;
     margin: 0 auto 0.8em auto;
-}
-.searchResult .detailsResult img{
+} */
+.searchResult .detailsResult img {
     max-width: 90%;
 }
-.searchResult .detailsResult h3{
-    margin: 30px 0 20px;
-}
-.searchResult .detailsResult h4{
-    margin: 0.8em 0;
-}
-.searchResult .detailsResult p{
-    margin: 0.3em 0;
-}
-.searchResult .resultLinks .resultLink:not(:last-of-type) {
-    margin-bottom: 0.8em;
-}
-.searchResult .resultLinks .resultLink {
-    border: 1px solid var(--bg-color-main);
-    padding: 0.5em;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    transition: ease-out .5s;
-}
-.searchResult .resultLinks .resultLink:before {
-    transition: .5s all ease;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    opacity: 0;
-    content : "";
-    background-color: var(--primary-color);
-}
-.searchResult .resultLinks .resultLink:hover::before {
-    transition: .5s all ease;
-    left: 0;
-    right: 0;
-    opacity: 1;
-    z-index: -1;
-}
-.searchResult .resultLinks .resultLink:hover {
-    border: 1px solid var(--primary-color);
-}
-.searchResult .resultLinks .resultLink a {
+.searchResult .detailsResult a {
     color: white;
 }
-
+.searchResult .detailsResult a.track-title {
+    margin: 30px 0 20px;
+}
+.searchResult .detailsResult a.album-title {
+    margin: 0.8em 0;
+}
+.searchResult .detailsResult a.artit-name {
+    margin: 0.3em 0;
+}
 
 /****** MESSAGE SI RECHERCHE VIDE *****/
 #emptySearch {

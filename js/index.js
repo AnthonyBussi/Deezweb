@@ -26,15 +26,15 @@ document.querySelector("#searchButton").addEventListener("click", () => {
 
                 //si recherche sans résultat ou mauvaise recherche
                 if (resDataLength == 0) {
-                    resultLength.innerHTML = "Aucun résultat";
+                    resultLength.innerHTML = "I n'y a aucun résultat";
                 }
                 else {
                 //afficher nombre de résultats
                     if (resDataLength < 2) {
-                        resultLength.innerHTML = `${resDataLength} Résultat`;
+                        resultLength.innerHTML = `${resDataLength} résultat`;
                     }
                     else {
-                        resultLength.innerHTML = `${resDataLength} Résultats`;
+                        resultLength.innerHTML = `${resDataLength} résultats`;
                     }
                 }
 
@@ -57,39 +57,34 @@ document.querySelector("#searchButton").addEventListener("click", () => {
                     newImage.setAttribute("alt", resultData[i].album.title);
 
                     let newTitle = document.createElement("a");
+                    newTitle.classList.add("track-title");
                     newTitle.setAttribute("href", `pages/titre.html?id=${trackId}`);
                     newTitle.innerHTML += `
                         ${resultData[i].title}
                     `;
 
                     let newArtistName = document.createElement("a");
+                    newArtistName.classList.add("artist-name");
                     newArtistName.setAttribute("href", `pages/artiste.html?id=${artistId}`);
                     newArtistName.innerHTML += `
                         ${resultData[i].artist.name}
                     `;
                     let newAlbumTitle = document.createElement("a");
+                    newAlbumTitle.classList.add("album-title");
                     newAlbumTitle.setAttribute("href", `pages/album.html?id=${albumId}`)
                     newAlbumTitle.innerHTML += `
                         ${resultData[i].album.title}
                     `;
 
                     let newTrackDuration = document.createElement("p");
+                    newTrackDuration.classList.add("track-duration");
                     newTrackDuration.innerHTML += `
                         ${convertTime(resultData[i].duration)}
                     `;
                     
                     const $favoriteButton = document.createElement('button');
                     $favoriteButton.setAttribute("id", "favoriteButton");
-                    $favoriteButton.innerHTML += '<i class="far fa-heart"></i>';
-
-                    // let newResultLinks = document.createElement("div");
-                    // newResultLinks.classList.add("resultLinks");
-                    // let newResultLinkTrack = document.createElement("div");
-                    // newResultLinkTrack.classList.add("resultLink");
-                    // newResultLinkTrack.setAttribute("id", "listenTrack");
-                    // newResultLinkTrack.innerHTML += `
-                    //     <a href="pages/titre.html?id=${trackId}">Ecouter un extrait</a>
-                    // `;
+                    $favoriteButton.innerHTML += '<i class="far fa-heart"></i>';                    
 
                     // on insère les détails des résultats dans l'élément parent
                     newResultDetails.appendChild(newImage);
@@ -98,14 +93,10 @@ document.querySelector("#searchButton").addEventListener("click", () => {
                     newResultDetails.appendChild(newArtistName);
                     newResultDetails.appendChild(newAlbumTitle);
                     newResultDetails.appendChild(newTrackDuration);
-                    
-                    // on ajoute les 3 liens dans l'élément parent
-                    // newResultLinks.appendChild(newResultLinkTrack);
 
                     // on insère les éléments dans la carte
                     newResult.appendChild(newResultDetails);
                     newResult.appendChild($favoriteButton);
-                    // newResult.appendChild(newResultLinks);
 
                     // on insère le nouveau résultat dans le container
                     resultContainer.appendChild(newResult);
