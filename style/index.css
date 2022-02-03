@@ -49,20 +49,18 @@ select option{
 
 /****** LISTE DES RESULTATS ******/
 #resultsContainer {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
 }
 
 .searchResult {
     display: flex;
     flex-direction: column;
-    width: 350px;
-    padding: 30px 20px;
-    margin: 20px;
-    border-radius: 24px;
-    border: 1px solid white;
-    /* background: #242423; */
+    transition: all ease .3s;
+}
+
+.searchResult:hover {
+    background-color: #242423;
 }
 
 .searchResult .detailsResult {
@@ -71,24 +69,25 @@ select option{
     align-items: center;
     text-align: center;
 }
-/* .searchResult .resultLink {
-    width: 80%;
-    margin: 0 auto 0.8em auto;
-} */
 .searchResult .detailsResult img {
-    max-width: 90%;
+    margin: 12px 0;
+    /* max-width: 90%; */
 }
 .searchResult .detailsResult a {
     color: white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80%;
 }
 .searchResult .detailsResult a.track-title {
-    margin: 30px 0 20px;
+    margin: 12px 0;
 }
 .searchResult .detailsResult a.album-title {
-    margin: 0.8em 0;
+    margin: 12px 0;
 }
 .searchResult .detailsResult a.artit-name {
-    margin: 0.3em 0;
+    margin-top: 12px;
 }
 
 /****** MESSAGE SI RECHERCHE VIDE *****/
@@ -107,6 +106,11 @@ select option{
 }
 
 /****** MEDIA QUERIES *****/
+@media screen and (max-width:1300px) {
+    #resultsContainer {
+        grid-template-columns: repeat(3, 33%);
+    }
+}
 @media screen and (max-width:1100px) {
     input[type="text"] {
         min-width: 100%;

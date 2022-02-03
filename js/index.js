@@ -19,7 +19,7 @@ document.querySelector("#searchButton").addEventListener("click", () => {
         window.fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/search?q=${requestValue.value}&order=${orderSorting.value}`)
             .then(response => response.json())
             .then(result => {
-                // console.log(result);
+                console.log(result);
 
                 const resultData = result.data;
                 const resDataLength = resultData.length;
@@ -53,7 +53,7 @@ document.querySelector("#searchButton").addEventListener("click", () => {
                     let newResultDetails = document.createElement("div");
                     newResultDetails.classList.add("detailsResult");
                     let newImage = document.createElement("img");
-                    newImage.setAttribute("src", resultData[i].album.cover);
+                    newImage.setAttribute("src", resultData[i].album.cover_medium);
                     newImage.setAttribute("alt", resultData[i].album.title);
 
                     let newTitle = document.createElement("a");
@@ -88,8 +88,8 @@ document.querySelector("#searchButton").addEventListener("click", () => {
 
                     // on insère les détails des résultats dans l'élément parent
                     newResultDetails.appendChild(newImage);
-                    newResultDetails.appendChild(newTitle);
                     newResultDetails.appendChild(newImage);
+                    newResultDetails.appendChild(newTitle);
                     newResultDetails.appendChild(newArtistName);
                     newResultDetails.appendChild(newAlbumTitle);
                     newResultDetails.appendChild(newTrackDuration);
