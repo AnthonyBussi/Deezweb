@@ -3,12 +3,12 @@
 /****** DECLARATION DES VARIABLES ******/
 :root {
     --bg-color-main: #121218;
-    --bg-color-light: #8D918D;
     --primary-color: #57A773;
     --primary-color-dark: #386B4A;
-    --secondary-color: #F6F8F2;
+    --secondary-color: #8D918D;
     --favourite-color: #E11439;
     --alert-color: #FF0022;
+    --third-color: #F6F8F2;
 }
 
 /****** DECLARATION GLOBALES ******/
@@ -35,7 +35,7 @@ h1 {
     color: var(--primary-color);
 }
 h2 {
-    color: var(--secondary-color);
+    color: var(--third-color);
     font-size: 1.8em;
 }
 a {

@@ -90,6 +90,42 @@ select option{
     margin-top: 12px;
 }
 
+/****** AFFICHAGE DES ELEMENTS A LA UNE *****/
+#topAlbums, #topArtists , #topTracks , #topPlaylists , #topPodcasts {
+    display: grid;
+    grid-template-columns: repeat(5, 19%);
+    justify-content: space-around;
+    grid-gap: 12px;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+}
+
+.top img {
+    margin-bottom: 12px;
+}
+
+.top a {
+    color: white;
+}
+
+.top .top-title {
+    margin-bottom: 6px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.top .top-artist {
+    color: var(--secondary-color);
+}
+
+.top .top-artist:hover {
+    text-decoration: underline;
+}
+
 /****** MESSAGE SI RECHERCHE VIDE *****/
 #emptySearch {
     text-align: center;
@@ -109,6 +145,9 @@ select option{
 @media screen and (max-width:1300px) {
     #resultsContainer {
         grid-template-columns: repeat(3, 33%);
+    }
+    #topAlbums, #topArtists , #topTracks , #topPlaylists , #topPodcasts {
+    grid-template-columns: repeat(3, 33%);
     }
 }
 @media screen and (max-width:1100px) {
