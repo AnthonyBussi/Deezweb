@@ -152,7 +152,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
         const resPodcasts = result.podcasts.data;
         const resPodcastsLength = resPodcasts.length;
 
-        console.log(resAlbums);
+        console.log(resTracks);
 
         // Affichage des albums à la une
         for (let i = 0; i < resAlbumsLength; i++) {
@@ -175,12 +175,17 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
             `;
         }
 
-        // Affichage des chansons  à la une
+        // Affichage des titres  à la une
         for (let i = 0; i < resTracksLength; i++) {
             topTracks.innerHTML += `
             <div class="top">     
-                <img src="${ resTracks[i].artist.picture_medium }" alt=${ resTracks[i].artist.name }>
+                <img src="${ resTracks[i].album.cover_medium }" alt=${ resTracks[i].artist.name }>
                 <a href="pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].title }</a>
+                <div>
+                    <a href="pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].artist.name }</a>
+                    <span> - </span>
+                    <a href="pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].album.title }</a>
+                </div>
             </div>
             `;
         }

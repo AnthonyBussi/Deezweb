@@ -105,6 +105,7 @@ select option{
 
 .top img {
     margin-bottom: 12px;
+    border-radius: 50%;
 }
 
 .top a {
