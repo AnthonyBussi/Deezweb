@@ -1,3 +1,11 @@
+section:not(:last-of-type) {
+    margin-bottom: 48px;
+}
+
+h2 {
+    margin-bottom: 24px;
+}
+
 /****** BARRE DE RECHERCHE ******/
 #search {
     display: flex;
@@ -105,27 +113,36 @@ select option{
 
 .top img {
     margin-bottom: 12px;
-    border-radius: 50%;
+    border-radius: 12px;
 }
 
 .top a {
     color: white;
 }
 
-.top .top-title {
+.top .title {
     margin-bottom: 6px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
-.top .top-artist {
+.top.album .artist {
     color: var(--secondary-color);
 }
 
-.top .top-artist:hover {
+.top.album .artist:hover {
     text-decoration: underline;
 }
+
+.top.artist {
+    align-items: center;
+}
+.top.artist img {
+    border-radius: 50%;
+}
+
+
 
 /****** MESSAGE SI RECHERCHE VIDE *****/
 #emptySearch {
