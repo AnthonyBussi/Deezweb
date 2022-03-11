@@ -4,12 +4,17 @@ const paramIdTrack = window.location.search;
 const urlParam = new URLSearchParams (paramIdTrack);
 const trackId = urlParam.get("id");
 
+const loader = document.querySelector("#loader");
+
 const $trackInfo = document.querySelector("#track-info");
 
 fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/track/${trackId}`)
     .then(response => response.json())
     .then(result => {        
         console.log(result);
+        
+        loader.style.display = "none";
+        
         $trackInfo.innerHTML += `
         <div id="track-container">            
             <img src="${result.album.cover_medium}">
