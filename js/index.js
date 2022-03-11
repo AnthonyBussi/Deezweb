@@ -1,4 +1,5 @@
 'use strict';
+let loader = document.querySelector("#loader");
 let requestValue = document.querySelector("#request");
 let orderSorting = document.querySelector("#orderBy");
 let emptySearch = document.querySelector("#emptySearch");
@@ -136,6 +137,8 @@ document.querySelector("#searchButton").addEventListener("click", () => {
 fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
     .then(response => response.json())
     .then(result => {
+
+        loader.style.display = "none";
 
         const resAlbums = result.albums.data;
         const resAlbumsLength = resAlbums.length;
