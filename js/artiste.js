@@ -4,12 +4,17 @@ const paramIdArtist = window.location.search;
 const urlParam = new URLSearchParams (paramIdArtist);
 const artistId = urlParam.get("id");
 
+const loader = document.querySelector("#loader");
+
 const $artistInfo = document.querySelector("#artist-info");
 
 fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}`)
     .then(response => response.json())
     .then(result => {       
         console.log(result); 
+        
+        loader.style.display = "none";
+        
         $artistInfo.innerHTML += `
         <div id="info-container">
             <div id="picture-artist-container">

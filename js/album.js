@@ -4,6 +4,8 @@ const paramIdAlbum = window.location.search;
 const urlParam = new URLSearchParams (paramIdAlbum);
 const albumId = urlParam.get("id");
 
+const loader = document.querySelector("#loader");
+
 const $albumInfo = document.querySelector("#album-info");
 const $nbTracks = document.querySelector("#nb-tracks");
 
@@ -11,6 +13,9 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/album/${albu
     .then(response => response.json())
     .then(result => {        
         console.log(result);
+        
+        loader.style.display = "none";
+        
         $albumInfo.innerHTML += `
         <div id="album-info-container">
             <div id="cover-album-container">
