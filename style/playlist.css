@@ -1,0 +1,38 @@
+#loader {
+    height: calc(100vh - 65px);
+    top: 65px;
+}
+
+#playlist-info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+#playlist-info #playlist-data {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#playlist-info #playlist-data img {
+    margin-right: 24px;
+}
+#playlist-info #playlist-data h2 {
+    margin-bottom: 12px;
+}
+#playlist-info #playlist-data .description {
+    font-style: italic;
+}
+#info-tracks {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid var(--third-color);
+}
+#info-tracks p {
+    margin: 1em 4em;
+}
+#playlist-tracks-list .track{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+}
