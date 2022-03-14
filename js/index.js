@@ -155,7 +155,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
         const resPodcasts = result.podcasts.data;
         const resPodcastsLength = resPodcasts.length;
 
-        console.log(resTracks);
+        console.log(resPlaylists);
 
         // Affichage des albums à la une
         for (let i = 0; i < resAlbumsLength; i++) {
@@ -198,7 +198,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
             topPlaylists.innerHTML += `
             <div class="top playlist">     
                 <img src="${ resPlaylists[i].picture_medium }" alt=${ resPlaylists[i].title }>
-                <a href="#">${ resPlaylists[i].title }</a>
+                <a href="pages/playlist.html?id=${resPlaylists[i].id}">${ resPlaylists[i].title }</a>
             </div>
             `;
         }
