@@ -28,7 +28,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/playlist/${p
                     <p class="description">${result.description}</p>
                     <p>Durée totale : ${convertTime(result.duration)}</p>
                     <p>${result.fans} fans</p>
-                    <a href="${result.link}" id="goOnDeezer" target="_blank">Voir sur Deezer</a>                                        
+                    <a href="${result.link}" id="goOnDeezer" target="_blank">Voir sur Deezer <i class="fas fa-arrow-right"></i></a>                                        
                 </div>
             </div>
         `;
@@ -54,15 +54,17 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/playlist/${p
              let track = document.createElement('li');
              track.classList.add("track");
              track.innerHTML = `
-                <img src="${trackList[i].album.cover_small}" alt="${trackList[i].title}">
                 <div>
-                    <a href="titre.html?id=${trackList[i].id}">${trackList[i].title}</a>, 
-                    <a href="album.html?id=${trackList[i].id}">${trackList[i].album.title}</a> -
-                    <a href="artiste.html?id=${trackList[i].id}">${trackList[i].artist.name}</a>
-
-
-                </div>
-                 <span>${convertTime(trackList[i].duration)}</span>
+                    <div class="track-info">
+                        <img src="${trackList[i].album.cover_small}" alt="${trackList[i].title}">
+                        <div>
+                            <a href="titre.html?id=${trackList[i].id}" class="track-title">${trackList[i].title}</a><span> - </span>
+                            <a href="album.html?id=${trackList[i].album.id}" class="track-album">${trackList[i].album.title}</a><span> - </span>
+                            <a href="artiste.html?id=${trackList[i].artist.id}" class="track-artist">${trackList[i].artist.name}</a>
+                        </div>
+                    </div>
+                    <span>${convertTime(trackList[i].duration)}</span>
+                 </div>
              `;
  
              // on insère les balises li créées dans la liste #tracks-list

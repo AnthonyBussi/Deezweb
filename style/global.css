@@ -3,6 +3,7 @@
 /****** DECLARATION DES VARIABLES ******/
 :root {
     --bg-color-main: #121218;
+    --bg-color-secondary: #23232F;
     --primary-color: #57A773;
     --primary-color-dark: #386B4A;
     --secondary-color: #8D918D;
@@ -89,20 +90,26 @@ input, select, button {
 
 /****** BOUTONS DE REDIRECTION VERS DEEZER.COM ******/
 #goOnDeezer {
-    display: block;
-    width: 220px;
-    border-radius: 50px;
-    margin-top: 1em;
-    padding: 0.7em 1em;
+    display: inline-block;
+    border-bottom: 1px solid var(--third-color);
+    margin-top: 12px;
+    /* padding: 6px 12px; */
     text-align: center;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: var(--secondary-color);
-    background-color: var(--primary-color-dark);
+    color: var(--third-color);
+    /* background-color: var(--primary-color-dark); */
     transition: all .4s;
 }
 #goOnDeezer:hover {
-    background-color: var(--primary-color);
+    /* background-color: var(--primary-color); */
+}
+#goOnDeezer i {
+    color: var(--primary-color);
+    margin-left: 6px;
+    padding-left: 0;
+    transition: all 0.3s ease;
+}
+#goOnDeezer:hover i {
+    padding-left: 6px;
 }
 
 
