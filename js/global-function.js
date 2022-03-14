@@ -1,15 +1,28 @@
 'use strict';
 
-// fonction utilisée pour convertir les durées qui sont obtenues en secondes en minutes et secondes
+// fonction utilisée pour convertir les durées qui sont obtenues en secondes en heures, minutes et secondes
+
+function add0(number) {
+    if (number < 10) {
+        return "0" + number;
+    } else {
+        return number;
+    }
+  }
+
 function convertTime(duration) {
     duration = Number(duration);
 
-    let min = Math.floor(duration % 3600 / 60);
-    let sec = Math.floor(duration % 3600 % 60);
+    let hh = add0(Math.floor(duration /3600));
+    let mm = add0(Math.floor(duration % 3600 / 60));
+    let ss = add0(Math.floor(duration % 3600 % 60));
 
-    return min + "'" + sec + "\"";
+    if (hh == 0) {
+        return mm + ":" + ss;
+    } else {
+        return hh + ":" + mm + ":" + ss;
+    }
 }
-
 
 // changement de theme
 
