@@ -7,6 +7,7 @@ const artistId = urlParam.get("id");
 const loader = document.querySelector("#loader");
 
 const $artistInfo = document.querySelector("#artist-info");
+const $artistAlbums = document.querySelector("#artist-albums");
 
 fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}`)
     .then(response => response.json())
@@ -28,6 +29,46 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${art
             </div>                
         </div>                
         `;
+        
+        // on ajoute la liste des albums de l'artiste
+        fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}/albums`)
+        .then(response => response.json())
+        .then(result => {
+            console.log(result);
+
+            for (let i = 0, albumList = result.data; i < result.data.length; i++) {
+
+                let album = document.createElement("div");
+                album.innerHTML += `
+                <div id="album-info-container">
+                    <div id="cover-album-container">
+                        <img src="${albumList[i].cover_medium}" alt="Couverture de l'album ${albumList[i].title}" id="cover-album">
+                    </div>
+                    <div id="info-album">
+                        <p>${albumList[i].title}</p>
+                    </div>              
+                </div>                
+                `;
+
+                $artistAlbums.appendChild(album);
+
+            }
+
+        });
+        
+        // // on ajoute les meilleurs titres de l'artiste
+        // fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}/top`)
+        // .then(response => response.json())
+        // .then(result => {
+        //     console.log(result);
+        // });
+        
+        // // on ajoute la liste des artistes similaires de l'artiste
+        // fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}/related`)
+        // .then(response => response.json())
+        // .then(result => {
+        //     console.log(result);
+        // });
     })
 
 
