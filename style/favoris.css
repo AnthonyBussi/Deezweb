@@ -22,11 +22,16 @@ h2 i {
     display: flex;
     align-items: center;
 }
+#favorites-list .favorite-details {
+    display: flex;
+    flex-direction: column;
+}
 #favorites-list .favorite-title {
     color: #FFFFFF;
     font-weight: bold;
 }
 #favorites-list .favorite-artist {
+    color: #FFFFFF;
     margin-top: 6px;
     font-size: 12px;
 }

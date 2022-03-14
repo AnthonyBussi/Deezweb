@@ -21,7 +21,7 @@ for (let i = 0; i < idTracksList.length; i++) {
                 <img src=${result.artist.picture} alt="" class="favorite-artist-picture"/>
                 <div class="favorite-details">
                     <a href="titre.html?id=${result.id}" class="favorite-title">${result.title}</a>
-                    <p class="favorite-artist">${result.artist.name}</p>
+                    <a href="artiste.html?id=${result.artist.id}" class="favorite-artist">${result.artist.name}</a>
                 </div>
             </div>
         `;
