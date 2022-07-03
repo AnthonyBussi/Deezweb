@@ -13,24 +13,15 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    border-radius: 50px;
     background: #242423;
-    box-shadow:  20px 20px 44px #181817, -20px -20px 44px #30302f;
 }
 #picture-artist-container {
-    width: 600px;
-    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 #picture-artist {
-    border-radius: 50%;
-    width: 450px;
-    transition: all 0.5s;
-}
-#picture-artist:hover {
-    width: 550px;
+    width: 250px;
 }
 #info-artist h2 {
     font-size: 2.2em;
@@ -40,8 +31,48 @@
     font-size: 1.4em;
 }
 
+#artist-albums {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+
+.album-info-container {
+    display: flex;
+    flex-direction: column;
+    transition: all ease .3s;
+}
+
+.album-info-container:hover {
+    background-color: #242423;
+}
+
+.album-info-container .info-album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.album-info-container .info-album img {
+    margin: 12px 0;
+}
+
+.album-info-container .info-album p {
+    color: white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80%;
+    margin: 12px 0;
+}
+
 
 /****** MEDIA QUERIES *****/
+@media screen and (max-width:1300px) {
+    #artist-albums {
+        grid-template-columns: repeat(3, 33%);
+    }
+}
 @media screen and (max-width: 1200px) {
     #picture-artist-container {
         width: 460px;
@@ -63,6 +94,11 @@
         margin: 1.5em 0 3em 0;
     }
 }
+@media screen and (max-width:950px) {
+    #artist-albums {
+        grid-template-columns: repeat(2, 50%);
+    }
+}
 @media screen and (max-width: 700px) {
     #artist-info {
         padding: 0;
@@ -80,6 +116,11 @@
     }
     #picture-artist-container {
         margin: 0;
+    }
+}
+@media screen and (max-width:950px) {
+    #artist-albums {
+        grid-template-columns: repeat(1, 100%);
     }
 }
 @media screen and (max-width: 500px) {
