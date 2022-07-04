@@ -91,7 +91,7 @@ input, select, button {
 /****** BOUTONS DE REDIRECTION VERS DEEZER.COM ******/
 #goOnDeezer {
     display: inline-block;
-    border-bottom: 1px solid var(--third-color);
+    /* border-bottom: 1px solid var(--third-color); */
     margin-top: 12px;
     /* padding: 6px 12px; */
     text-align: center;
@@ -102,7 +102,7 @@ input, select, button {
 #goOnDeezer:hover {
     /* background-color: var(--primary-color); */
 }
-#goOnDeezer i {
+/* #goOnDeezer i {
     color: var(--primary-color);
     margin-left: 6px;
     padding-left: 0;
@@ -110,7 +110,7 @@ input, select, button {
 }
 #goOnDeezer:hover i {
     padding-left: 6px;
-}
+} */
 
 
 /****** MEDIA QUERIES *****/

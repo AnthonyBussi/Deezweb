@@ -7,8 +7,8 @@ const artistId = urlParam.get("id");
 const loader = document.querySelector("#loader");
 
 const $artistInfo = document.querySelector("#artist-info");
-const $artistAlbums = document.querySelector("#artist-albums");
-const $artistTop = document.querySelector("#artist-top");
+const $artistAlbums = document.querySelector("#artist-albums-list");
+const $artistTop = document.querySelector("#artist-top-list");
 
 fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}`)
     .then(response => response.json())
@@ -19,15 +19,15 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${art
         
         $artistInfo.innerHTML += `
         <div id="info-container">
-            <div id="picture-artist-container">
-                <img src="${result.picture_big}" alt="${result.name}" id="picture-artist">
-            </div>
             <div id="info-artist">
                 <h2>${result.name}</h2>
                 <p>${result.nb_album} albums</p>
                 <p>${result.nb_fan} fans</p>
-                <a href="${result.link}" id="goOnDeezer" target="_blank">Voir sur Deezer</a>
-            </div>                
+                <a href="${result.link}" id="goOnDeezer" target="_blank">En savoir plus</a>
+            </div>     
+            <div id="picture-artist-container">
+                <img src="${result.picture_big}" alt="${result.name}" id="picture-artist">
+            </div>           
         </div>                
         `;
         
@@ -54,35 +54,27 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${art
         });
         
         // on ajoute les meilleurs titres de l'artiste
-        // fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}/top`)
-        // .then(response => response.json())
-        // .then(result => {
-        //     console.log(result);
+        fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}/top`)
+        .then(response => response.json())
+        .then(result => {
+            console.log(result);
 
-        //     for (let i = 0, topTracks = result.data; i < result.data.length; i++) {
-        //         let track = document.createElement("div");
-        //         track.innerHTML += `
-        //         <div id="album-info-container">
-        //             <div id="cover-album-container">
-        //                 <img src="${topTracks[i].album.cover_medium}" alt="Couverture de l'album ${topTracks[i].title}" id="cover-album">
-        //             </div>
-        //             <div id="info-album">
-        //                 <p>${topTracks[i].title}</p>
-        //             </div>              
-        //         </div>  
-        //         `;
+            for (let i = 0, topTracks = result.data; i < result.data.length; i++) {
+                let track = document.createElement("li");
+                track.innerHTML += `
+                <div class="track-info-container">
+                    <div class="info-track">
+                        <audio controls src="${topTracks[i].preview}"></audio>
+                        <a href="titre.html?id=${topTracks[i].id}">${topTracks[i].title}</a>
+                        <a href="album.html?id=${topTracks[i].album.id}">${topTracks[i].album.title}</a>
+                        <p>${convertTime(topTracks[i].duration)}</p>
+                    </div>              
+                </div>  
+                `;
 
-        //         $artistTop.appendChild(track);
-
-        //     }
-        // });
-        
-        // // on ajoute la liste des artistes similaires de l'artiste
-        // fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}/related`)
-        // .then(response => response.json())
-        // .then(result => {
-        //     console.log(result);
-        // });
+                $artistTop.appendChild(track);
+            }
+        });
     })
 
 
