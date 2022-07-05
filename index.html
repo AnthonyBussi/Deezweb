@@ -20,36 +20,14 @@
         <nav>
             <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i>Accueil</a></li>
+                <li><a href="pages/search.html"><i class="fas fa-search"></i>Rechercher</a></li>
                 <li><a href="pages/favoris.html"><i class="fas fa-heart"></i>Favoris</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="container">
-            <section>
-                <div id="search">
-                    <input type="text" id="request" placeholder="Rechercher"> 
-                    <div id="param-search">
-                        <label for="orderBy">Trier par :</label>
-                        <select name="orderBy" id="orderBy">
-                            <option value="ALBUM_ASC">Album</option>
-                            <option value="TRACK_ASC">Titre</option>
-                            <option value="RANKING">Rang</option>
-                            <option value="ARTIST_ASC">Artiste</option>
-                            <option value="RATING_ASC">Popularité</option>
-                        </select>
-                    </div>
-                    <button type="submit" id="searchButton">Rechercher</button>
-                </div>
-                <div id="result">
-                    <div id="emptySearch"></div>
-                    <div id="resultLength"></div>
-
-                    <ul id="resultsContainer"></ul>
-                </div>
-            </section>
             <div>
-                
                 <div id="loader">
                     <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_PEeHJO.json" 
                                 background="transparent"  
@@ -59,33 +37,22 @@
                                 autoplay>
                     </lottie-player>
                 </div>
-            <section>
-                <h2>Albums</h2>
-                <div id="topAlbums">
-                </div>
-            </section>
-            <section>
-                <h2>Artistes</h2>
-                <div id="topArtists">
-                </div>
-            </section>
-            <section>
-                <h2>Titres</h2>
-                <div id="topTracks">
-                </div>
-            </section>
-            <section>
-                <h2>Playlists</h2>
-                <div id="topPlaylists">
-                </div>
-            </section>
-            <section>
-                <h2>Podcasts</h2>
-                <div id="topPodcasts">
-                </div>
-            </section>
-            
-        </div>
+                <section>
+                    <h2>Top titres</h2>
+                    <div id="topTracks">
+                    </div>
+                </section>
+                <section>
+                    <h2>Albums populaires</h2>
+                    <div id="topAlbums">
+                    </div>
+                </section>
+                <section>
+                    <h2>Artistes à la une</h2>
+                    <div id="topArtists">
+                    </div>
+                </section>
+            </div>
             <!-- <div id="theme-button"><i class="far fa-sun"></i></div> -->
         </div>
     </main>

@@ -1,0 +1,195 @@
+section:not(:last-of-type) {
+    margin-bottom: 48px;
+}
+
+h2 {
+    margin-bottom: 24px;
+}
+
+/****** BARRE DE RECHERCHE ******/
+#search {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 0 30px;
+}
+#search *:not(:first-child) {
+    margin-left: 1em;
+}
+button:not(#favoriteButton) {
+    border: none;
+    color: white;
+    background-color: #57A773;
+    display: block;
+    font-weight: bold;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+button#favoriteButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+button#favoriteButton i {
+    margin: 12px 0;
+}
+input[type="text"] {
+    min-width: 50%;
+    padding: 0.5em 0 0.5em 1em;
+    margin-bottom: 6px;
+}
+select{
+    border: none;
+    margin-bottom: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+}
+select option{
+    font-style: italic;
+    color: white;
+    background-color: var(--primary-color);
+    border: 1px solid white;
+}
+
+/****** LOADER ******/
+#loader {
+    height: calc(100vh - 200px);
+    top: 200px;
+}
+
+/****** LISTE DES RESULTATS ******/
+#resultsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+
+.searchResult {
+    display: flex;
+    flex-direction: column;
+    transition: all ease .3s;
+}
+
+.searchResult:hover {
+    background-color: #242423;
+}
+
+.searchResult .detailsResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.searchResult .detailsResult img {
+    margin: 12px 0;
+    /* max-width: 90%; */
+}
+.searchResult .detailsResult a {
+    color: white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80%;
+}
+.searchResult .detailsResult a.track-title {
+    margin: 12px 0;
+}
+.searchResult .detailsResult a.album-title {
+    margin: 12px 0;
+}
+.searchResult .detailsResult a.artit-name {
+    margin-top: 12px;
+}
+
+/****** AFFICHAGE DES ELEMENTS A LA UNE *****/
+#topAlbums, #topArtists , #topTracks , #topPlaylists , #topPodcasts {
+    display: grid;
+    grid-template-columns: repeat(5, 19%);
+    justify-content: space-around;
+    grid-gap: 12px;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+}
+
+.top img {
+    margin-bottom: 12px;
+    border-radius: 12px;
+}
+
+.top a {
+    color: white;
+}
+
+.top .title {
+    margin-bottom: 6px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.top.album .artist {
+    color: var(--secondary-color);
+}
+
+.top.album .artist:hover {
+    text-decoration: underline;
+}
+
+.top.artist {
+    align-items: center;
+}
+.top.artist img {
+    border-radius: 50%;
+}
+
+
+
+/****** MESSAGE SI RECHERCHE VIDE *****/
+#emptySearch {
+    text-align: center;
+    color: var(--alert-color);
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+#resultLength {
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+/****** MEDIA QUERIES *****/
+@media screen and (max-width:1300px) {
+    #resultsContainer {
+        grid-template-columns: repeat(3, 33%);
+    }
+    #topAlbums, #topArtists , #topTracks , #topPlaylists , #topPodcasts {
+    grid-template-columns: repeat(3, 33%);
+    }
+}
+@media screen and (max-width:1100px) {
+    input[type="text"] {
+        min-width: 100%;
+        padding: 0.5em 0 0.5em 1em;
+        margin-bottom: 6px;
+    }
+}
+@media screen and (max-width:600px) {
+    #search {
+        flex-direction: column;
+    }
+    #search input, #search #param-search {
+        margin-left: 0;
+        margin-bottom: 2.5em;
+    }
+    #search #searchButton {
+        margin: 0
+    }
+}

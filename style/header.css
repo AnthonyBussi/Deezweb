@@ -12,8 +12,8 @@ header nav ul {
     display: flex;
     padding-left: 0;
 }
-header nav ul li:first-of-type {
-    margin-right: 20px;
+header nav ul li:not(:first-of-type) {
+    margin-left: 20px;
 }
 
 header nav ul a {
@@ -43,7 +43,7 @@ header nav ul li a i {
     transition: all ease .4s;
 }
 
-header nav ul li:first-child a:hover i {
+header nav ul li:not(:last-child) a:hover i {
     color: var(--primary-color)
 }
 header nav ul li:last-child a:hover i {

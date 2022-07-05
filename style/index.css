@@ -6,106 +6,15 @@ h2 {
     margin-bottom: 24px;
 }
 
-/****** BARRE DE RECHERCHE ******/
-#search {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 15px 0 30px;
-}
-#search *:not(:first-child) {
-    margin-left: 1em;
-}
-button:not(#favoriteButton) {
-    border: none;
-    color: white;
-    background-color: #57A773;
-    display: block;
-    font-weight: bold;
-    padding: 8px 12px;
-    margin-bottom: 6px;
-    cursor: pointer;
-}
-button#favoriteButton {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: #ffffff;
-}
-button#favoriteButton i {
-    margin: 12px 0;
-}
-input[type="text"] {
-    min-width: 50%;
-    padding: 0.5em 0 0.5em 1em;
-    margin-bottom: 6px;
-}
-select{
-    border: none;
-    margin-bottom: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 5px;
-}
-select option{
-    font-style: italic;
-    color: white;
-    background-color: var(--primary-color);
-    border: 1px solid white;
-}
-
 /****** LOADER ******/
 #loader {
-    height: calc(100vh - 200px);
-    top: 200px;
+    height: calc(100vh - 100px);
+    top: 100px;
 }
 
-/****** LISTE DES RESULTATS ******/
-#resultsContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-}
-
-.searchResult {
-    display: flex;
-    flex-direction: column;
-    transition: all ease .3s;
-}
-
-.searchResult:hover {
-    background-color: #242423;
-}
-
-.searchResult .detailsResult {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.searchResult .detailsResult img {
-    margin: 12px 0;
-    /* max-width: 90%; */
-}
-.searchResult .detailsResult a {
-    color: white;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 80%;
-}
-.searchResult .detailsResult a.track-title {
-    margin: 12px 0;
-}
-.searchResult .detailsResult a.album-title {
-    margin: 12px 0;
-}
-.searchResult .detailsResult a.artit-name {
-    margin-top: 12px;
-}
 
 /****** AFFICHAGE DES ELEMENTS A LA UNE *****/
-#topAlbums, #topArtists , #topTracks , #topPlaylists , #topPodcasts {
+#topTracks, #topArtists, #topAlbums {
     display: grid;
     grid-template-columns: repeat(5, 19%);
     justify-content: space-around;
@@ -115,11 +24,18 @@ select option{
 .top {
     display: flex;
     flex-direction: column;
+    padding: 6px;
+    background-color: var(--bg-color-third);
+    transition: background-color ease .3s;
+}
+
+.top:hover {
+    background-color: var(--bg-color-secondary);
 }
 
 .top img {
     margin-bottom: 12px;
-    border-radius: 12px;
+    border-radius: 6px;
 }
 
 .top a {
@@ -133,7 +49,7 @@ select option{
     overflow: hidden;
 }
 
-.top.album .artist {
+.top .artist {
     color: var(--secondary-color);
 }
 
@@ -146,23 +62,7 @@ select option{
 }
 .top.artist img {
     border-radius: 50%;
-}
-
-
-
-/****** MESSAGE SI RECHERCHE VIDE *****/
-#emptySearch {
-    text-align: center;
-    color: var(--alert-color);
-    font-size: 1.5em;
-    letter-spacing: 1px;
-}
-
-#resultLength {
-    text-align: center;
-    font-size: 1.5em;
-    letter-spacing: 1px;
-    margin-bottom: 24px;
+    max-width: 90%;
 }
 
 /****** MEDIA QUERIES *****/
@@ -170,7 +70,7 @@ select option{
     #resultsContainer {
         grid-template-columns: repeat(3, 33%);
     }
-    #topAlbums, #topArtists , #topTracks , #topPlaylists , #topPodcasts {
+    #topTracks, #topArtists, #topAlbums {
     grid-template-columns: repeat(3, 33%);
     }
 }
