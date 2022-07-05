@@ -154,12 +154,10 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
         // Affichage des titres  à la une
         for (let i = 0; i < resTracksLength; i++) {
             topTracks.innerHTML += `
-            <div class="top track">     
-                <img src="${ resTracks[i].album.cover_medium }" alt=${ resTracks[i].artist.name }>
-                    <a class="title" href="pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].title_short }</a>
-                <div>
-                    <a class="artist" href="pages/artiste.html?id=${resTracks[i].artist.id}">${ resTracks[i].artist.name }</a>
-                </div>
+            <div class="top track">
+                <a class="cover" href="pages/titre.html?id=${resTracks[i].id}"><img src="${ resTracks[i].album.cover_medium }" alt=${ resTracks[i].artist.name }></a>
+                <a class="title" href="pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].title_short }</a>
+                <a class="artist" href="pages/artiste.html?id=${resTracks[i].artist.id}">${ resTracks[i].artist.name }</a>
             </div>
             `;
         }
@@ -168,7 +166,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
         for (let i = 0; i < resAlbumsLength; i++) {
             topAlbums.innerHTML += `
             <div class="top album">                
-                <img src="${ resAlbums[i].cover_medium }" alt=${resAlbums[i].title} class="top-img">
+                <a class="cover" href="pages/album.html?id=${ resAlbums[i].id }"><img src="${ resAlbums[i].cover_medium }" alt=${resAlbums[i].title} class="top-img"></a>
                 <a class="title" href="pages/album.html?id=${ resAlbums[i].id }">${ resAlbums[i].title }</a>
                 <a class="artist" href="pages/artiste.html?id=${resAlbums[i].artist.id }">${ resAlbums[i].artist.name }</a>
             </div>
