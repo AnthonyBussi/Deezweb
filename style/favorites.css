@@ -15,7 +15,7 @@ h2 i {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--primary-color);
+    border-bottom: 2px solid var(--bg-color-secondary);
     padding: 18px;
 }
 #favorites-list .favorite-item .favorite-track {
