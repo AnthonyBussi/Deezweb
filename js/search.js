@@ -59,14 +59,14 @@ document.querySelector("#searchButton").addEventListener("click", () => {
 
                     let newTitle = document.createElement("a");
                     newTitle.classList.add("track-title");
-                    newTitle.setAttribute("href", `pages/titre.html?id=${trackId}`);
+                    newTitle.setAttribute("href", `pages/track.html?id=${trackId}`);
                     newTitle.innerHTML += `
                         ${resultData[i].title}
                     `;
 
                     let newArtistName = document.createElement("a");
                     newArtistName.classList.add("artist-name");
-                    newArtistName.setAttribute("href", `pages/artiste.html?id=${artistId}`);
+                    newArtistName.setAttribute("href", `pages/artist.html?id=${artistId}`);
                     newArtistName.innerHTML += `
                         ${resultData[i].artist.name}
                     `;

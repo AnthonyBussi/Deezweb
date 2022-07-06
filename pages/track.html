@@ -4,53 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist - DeezWeb</title>
+    <title>Titre - DeezWeb</title>
     <link rel="stylesheet" href="../style/normalize.css">
     <link rel="stylesheet" href="../style/global.css">
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/playlist.css">
+    <link rel="stylesheet" href="../style/track.css">
     <script src="https://kit.fontawesome.com/ba11807cf4.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
     <header>
-        <h1>Deez'Web</h1>
+        <a href="../index.html">
+            <h1>Deez'Web</h1>
+        </a>
         <nav>
             <ul>
                 <li><a href="../index.html"><i class="fas fa-home"></i>Accueil</a></li>
+                <li><a href="search.html"><i class="fas fa-search"></i>Rechercher</a></li>
                 <li><a href="favorites.html"><i class="fas fa-heart"></i>Favoris</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div id="loader">
-            <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_PEeHJO.json" 
-                        background="transparent"  
-                        speed="2" 
-                        style="width: 300px; height: 300px;"  
-                        loop  
-                        autoplay>
-            </lottie-player>
-        </div>
-        <div class="container">
-            <div id="playlist-info">
-
+        <div class="container" id="track-info">
+            <div id="loader">
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_PEeHJO.json" 
+                            background="transparent"  
+                            speed="2" 
+                            style="width: 300px; height: 300px;"  
+                            loop  
+                            autoplay>
+                </lottie-player>
             </div>
-            <div id="info-tracks">
-                <div>
-                    <div id="nb-tracks">
-        
-                    </div>
-                    <div id="duration">
-        
-                    </div>
-                </div>
-            </div>
-            <ul id="playlist-tracks-list">
-                
-            </ul>
             
         </div>
     </main>
@@ -60,6 +47,6 @@
     </footer>    
     
     <script src="../js/global-function.js"></script>
-    <script src="../js/playlist.js"></script>
+    <script src="../js/track.js"></script>
 </body>
 </html>

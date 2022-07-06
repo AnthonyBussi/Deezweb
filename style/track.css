@@ -1,0 +1,61 @@
+#loader {
+    height: calc(100vh - 65px);
+    top: 65px;
+}
+
+#track-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#track-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#track-container > img {
+    margin-bottom: 1em;
+}
+#track-container audio {
+    display: block;
+    margin-bottom: 1em;
+}
+#track-container h2 {
+    margin-bottom: 1em;
+}
+#track-container #track-artist-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+#track-container #track-artist-info img{
+    border-radius: 50%;
+    width: 100px;
+    margin-right: 0.5em;
+}
+#track-container #track-artist-info a{
+    color: white;
+    margin-left: 0.5em;
+    font-size: 1.2em;
+}
+#track-container a {
+    color: white;
+}
+#track-container p {
+    margin-bottom: 1em;
+}
+#track-container p #album-title{
+    font-weight: bold;
+}
+
+
+/****** MEDIA QUERIES *****/
+@media screen and (max-width: 450px) {
+    #track-container > img {
+        width: 240px;
+    }
+    #track-container audio {
+        width: 70%;
+    }
+}

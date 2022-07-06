@@ -59,14 +59,14 @@ let topPodcasts = document.querySelector('#topPodcasts');
 
 //                     let newTitle = document.createElement("a");
 //                     newTitle.classList.add("track-title");
-//                     newTitle.setAttribute("href", `pages/titre.html?id=${trackId}`);
+//                     newTitle.setAttribute("href", `pages/track.html?id=${trackId}`);
 //                     newTitle.innerHTML += `
 //                         ${resultData[i].title}
 //                     `;
 
 //                     let newArtistName = document.createElement("a");
 //                     newArtistName.classList.add("artist-name");
-//                     newArtistName.setAttribute("href", `pages/artiste.html?id=${artistId}`);
+//                     newArtistName.setAttribute("href", `pages/artist.html?id=${artistId}`);
 //                     newArtistName.innerHTML += `
 //                         ${resultData[i].artist.name}
 //                     `;
@@ -155,9 +155,9 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
         for (let i = 0; i < resTracksLength; i++) {
             topTracks.innerHTML += `
             <div class="top track">
-                <a class="cover" href="pages/titre.html?id=${resTracks[i].id}"><img src="${ resTracks[i].album.cover_medium }" alt=${ resTracks[i].artist.name }></a>
-                <a class="title" href="pages/titre.html?id=${resTracks[i].id}">${ resTracks[i].title_short }</a>
-                <a class="artist" href="pages/artiste.html?id=${resTracks[i].artist.id}">${ resTracks[i].artist.name }</a>
+                <a class="cover" href="pages/track.html?id=${resTracks[i].id}"><img src="${ resTracks[i].album.cover_medium }" alt=${ resTracks[i].artist.name }></a>
+                <a class="title" href="pages/track.html?id=${resTracks[i].id}">${ resTracks[i].title_short }</a>
+                <a class="artist" href="pages/artist.html?id=${resTracks[i].artist.id}">${ resTracks[i].artist.name }</a>
             </div>
             `;
         }
@@ -168,7 +168,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
             <div class="top album">                
                 <a class="cover" href="pages/album.html?id=${ resAlbums[i].id }"><img src="${ resAlbums[i].cover_medium }" alt=${resAlbums[i].title} class="top-img"></a>
                 <a class="title" href="pages/album.html?id=${ resAlbums[i].id }">${ resAlbums[i].title }</a>
-                <a class="artist" href="pages/artiste.html?id=${resAlbums[i].artist.id }">${ resAlbums[i].artist.name }</a>
+                <a class="artist" href="pages/artist.html?id=${resAlbums[i].artist.id }">${ resAlbums[i].artist.name }</a>
             </div>
             `;
         }
@@ -179,7 +179,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
             <div class="top artist">     
                 <img src="${ resArtists[i].picture_medium }" alt=${ resArtists[i].name }>
                 <div class="overlay">
-                    <a class="artist" href="pages/artiste.html?id=${resArtists[i].id}">${ resArtists[i].name }</a>
+                    <a class="artist" href="pages/artist.html?id=${resArtists[i].id}">${ resArtists[i].name }</a>
                 </div>
             </div>
             `;

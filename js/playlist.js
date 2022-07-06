@@ -58,9 +58,9 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/playlist/${p
                     <div class="track-info">
                         <img src="${trackList[i].album.cover_small}" alt="${trackList[i].title}">
                         <div>
-                            <a href="titre.html?id=${trackList[i].id}" class="track-title">${trackList[i].title}</a><span> - </span>
+                            <a href="track.html?id=${trackList[i].id}" class="track-title">${trackList[i].title}</a><span> - </span>
                             <a href="album.html?id=${trackList[i].album.id}" class="track-album">${trackList[i].album.title}</a><span> - </span>
-                            <a href="artiste.html?id=${trackList[i].artist.id}" class="track-artist">${trackList[i].artist.name}</a>
+                            <a href="artist.html?id=${trackList[i].artist.id}" class="track-artist">${trackList[i].artist.name}</a>
                         </div>
                     </div>
                     <span>${convertTime(trackList[i].duration)}</span>

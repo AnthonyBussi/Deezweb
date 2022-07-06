@@ -25,7 +25,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/album/${albu
                 <h2>${result.title}</h2>
                 <div id="album-artist-info">
                     <img src="${result.artist.picture_medium}" alt="${result.title} cover">
-                    <a href="artiste.html?id=${result.artist.id}">${result.artist.name}</a>                    
+                    <a href="artist.html?id=${result.artist.id}">${result.artist.name}</a>                    
                 </div>
                 <a href="${result.link}" id="goOnDeezer" target="_blank">Ecouter sur Deezer</a>
             </div>              
@@ -48,7 +48,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/album/${albu
             // Pour chaque chanson, on crée une balise li
             let track = document.createElement('li');
             track.innerHTML = `
-                <a href="titre.html?id=${trackList[i].id}">${trackList[i].title}</a>
+                <a href="track.html?id=${trackList[i].id}">${trackList[i].title}</a>
                 <span>${convertTime(trackList[i].duration)}</span>
             `;
 
