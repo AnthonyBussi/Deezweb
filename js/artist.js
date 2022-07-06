@@ -14,6 +14,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${art
     .then(response => response.json())
     .then(result => {       
         // console.log(result); 
+        document.title = result.name + " - Deezweb";
         
         loader.style.display = "none";
         
