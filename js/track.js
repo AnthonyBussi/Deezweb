@@ -15,6 +15,8 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/track/${trac
         
         loader.style.display = "none";
         
+        console.log(typeof result.release_date);
+
         $trackInfo.innerHTML += `
         <div id="track-container">            
             <img src="${result.album.cover_medium}">
@@ -26,7 +28,7 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/track/${trac
             </div>
             <p>${convertTime(result.duration)}</p>
             <p>Titre tiré de l'album <a href="album.html?id=${result.album.id}"><span id="album-title">${result.album.title}</span></a></p>
-            <p>${result.release_date}</p>
+            <p>${convertDate(result.release_date)}</p>
             <a href="${result.link}" id="goOnDeezer" target="_blank">Ecouter sur Deezer</a>                               
         </div>                
         `;

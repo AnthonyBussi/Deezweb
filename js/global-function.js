@@ -24,6 +24,11 @@ function convertTime(duration) {
     }
 }
 
+function convertDate(date) {
+    date = new Date;
+    return date.toLocaleDateString("fr");
+}
+
 // changement de theme
 
 // const themeBtn = document.querySelector("#theme-button");
