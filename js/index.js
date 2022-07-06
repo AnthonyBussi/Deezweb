@@ -178,7 +178,9 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
             topArtists.innerHTML += `
             <div class="top artist">     
                 <img src="${ resArtists[i].picture_medium }" alt=${ resArtists[i].name }>
-                <a class="artist" href="pages/artiste.html?id=${resArtists[i].id}">${ resArtists[i].name }</a>
+                <div class="overlay">
+                    <a class="artist" href="pages/artiste.html?id=${resArtists[i].id}">${ resArtists[i].name }</a>
+                </div>
             </div>
             `;
         }

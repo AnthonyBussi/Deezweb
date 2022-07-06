@@ -25,11 +25,14 @@ h2 {
     display: flex;
     flex-direction: column;
     padding: 6px;
-    background-color: var(--bg-color-third);
     transition: background-color ease .3s;
 }
 
-.top:hover {
+.top:not(.artist) {
+    background-color: var(--bg-color-third);
+}
+
+.top:not(.artist):hover {
     background-color: var(--bg-color-secondary);
 }
 
@@ -59,9 +62,10 @@ h2 {
 
 .top .artist {
     color: var(--secondary-color);
+    text-decoration: none;
 }
 
-.top.album .artist:hover {
+.top:not(.artist) .artist:hover {
     text-decoration: underline;
 }
 
@@ -69,9 +73,34 @@ h2 {
     align-items: center;
     color: white !important;
 }
+.top.artist {
+    position: relative;
+}
 .top.artist img {
     border-radius: 50%;
-    max-width: 90%;
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+.top.artist .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top.artist .overlay a {
+    background-color: var(--bg-color-third);
+    padding: 6px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity ease .3s;
+}
+
+.top.artist:hover .overlay a {
+    opacity: 1;
 }
 
 /****** MEDIA QUERIES *****/
