@@ -66,3 +66,17 @@ header nav ul li:last-child a:hover i {
         margin-bottom: 1em;
     }
 }
+
+@media screen and (max-width: 500px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav ul li:not(:first-of-type) {
+        margin-top: 12px;
+        margin-left: 0;
+    }
+    header nav ul li a::before, header nav ul li a::after {
+        display: none;
+    }
+}
