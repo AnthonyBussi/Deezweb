@@ -17,7 +17,7 @@ h2 {
 #search *:not(:first-child) {
     margin-left: 1em;
 }
-button:not(#favoriteButton) {
+button:not(.favoriteButton) {
     border: none;
     color: white;
     background-color: #57A773;
@@ -27,7 +27,7 @@ button:not(#favoriteButton) {
     margin-bottom: 6px;
     cursor: pointer;
 }
-button#favoriteButton {
+/* button#favoriteButton {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -35,7 +35,7 @@ button#favoriteButton {
 }
 button#favoriteButton i {
     margin: 12px 0;
-}
+} */
 input[type="text"] {
     min-width: 50%;
     padding: 0.5em 0 0.5em 1em;

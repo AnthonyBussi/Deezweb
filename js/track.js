@@ -13,12 +13,14 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/track/${trac
     .then(result => {        
         document.title = result.title + " - Deezweb";
         
-        loader.style.display = "none";
+        let listFavorites = localStorage.getItem('deezweb_tracksId');
+        console.log("Liste Favoris : " + listFavorites);
+        console.log("Id : " + result.id);
         
-        console.log(typeof result.release_date);
+        loader.style.display = "none";
 
         $trackInfo.innerHTML += `
-        <div id="track-container">            
+        <div id="track-container">
             <img src="${result.album.cover_medium}">
             <audio controls src="${result.preview}"></audio>
             <h2>${result.title}</h2>
@@ -28,8 +30,19 @@ fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/track/${trac
             </div>
             <p>${convertTime(result.duration)}</p>
             <p>Titre tiré de l'album <a href="album.html?id=${result.album.id}"><span id="album-title">${result.album.title}</span></a></p>
-            <p>${convertDate(result.release_date)}</p>
+            <p>${convertDate(result.release_date)}</p>    
+            <button class="favoriteButton" onclick="switchFavorite()">
+                <i class="far fa-heart"></i>
+            </button>
             <a href="${result.link}" id="goOnDeezer" target="_blank">Ecouter sur Deezer</a>                               
         </div>                
         `;
+
+        let button = document.querySelector('.favoriteButton');
+        if(listFavorites.includes(trackId)) {
+            button.classList.add("favorite");
+        } else {
+            button.classList.remove('favorite');
+        }
+    
     })

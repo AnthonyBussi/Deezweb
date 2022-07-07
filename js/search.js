@@ -59,20 +59,20 @@ document.querySelector("#searchButton").addEventListener("click", () => {
 
                     let newTitle = document.createElement("a");
                     newTitle.classList.add("track-title");
-                    newTitle.setAttribute("href", `pages/track.html?id=${trackId}`);
+                    newTitle.setAttribute("href", `track.html?id=${trackId}`);
                     newTitle.innerHTML += `
                         ${resultData[i].title}
                     `;
 
                     let newArtistName = document.createElement("a");
                     newArtistName.classList.add("artist-name");
-                    newArtistName.setAttribute("href", `pages/artist.html?id=${artistId}`);
+                    newArtistName.setAttribute("href", `artist.html?id=${artistId}`);
                     newArtistName.innerHTML += `
                         ${resultData[i].artist.name}
                     `;
                     let newAlbumTitle = document.createElement("a");
                     newAlbumTitle.classList.add("album-title");
-                    newAlbumTitle.setAttribute("href", `pages/album.html?id=${albumId}`)
+                    newAlbumTitle.setAttribute("href", `album.html?id=${albumId}`)
                     newAlbumTitle.innerHTML += `
                         ${resultData[i].album.title}
                     `;
@@ -84,7 +84,7 @@ document.querySelector("#searchButton").addEventListener("click", () => {
                     `;
                     
                     const $favoriteButton = document.createElement('button');
-                    $favoriteButton.setAttribute("id", "favoriteButton");
+                    $favoriteButton.setAttribute("class", "favoriteButton");
                     $favoriteButton.innerHTML += '<i class="far fa-heart"></i>';                    
 
                     // on insère les détails des résultats dans l'élément parent
