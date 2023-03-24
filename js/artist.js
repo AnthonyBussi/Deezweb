@@ -33,7 +33,7 @@ fetch(`https://api.deezer.com/artist/${artistId}`)
         `;
         
         // on ajoute la liste des albums de l'artiste
-        fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}/albums`)
+        fetch(`https://api.deezer.com/artist/${artistId}/albums`)
         .then(response => response.json())
         .then(result => {
             // console.log(result);
@@ -55,7 +55,7 @@ fetch(`https://api.deezer.com/artist/${artistId}`)
         });
         
         // on ajoute les meilleurs titres de l'artiste
-        fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}/top`)
+        fetch(`https://api.deezer.com/artist/${artistId}/top`)
         .then(response => response.json())
         .then(result => {
             console.log(result);

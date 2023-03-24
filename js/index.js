@@ -17,7 +17,7 @@ let topPodcasts = document.querySelector('#topPodcasts');
 
 // document.querySelector("#searchButton").addEventListener("click", () => {
 //     if (requestValue.value) {
-//         window.fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/search?q=${requestValue.value}&order=${orderSorting.value}`)
+//         window.fetch(`https://api.deezer.com/search?q=${requestValue.value}&order=${orderSorting.value}`)
 //             .then(response => response.json())
 //             .then(result => {
 //                 console.log(result);
