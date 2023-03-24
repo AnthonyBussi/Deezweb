@@ -10,7 +10,7 @@ const $artistInfo = document.querySelector("#artist-info");
 const $artistAlbums = document.querySelector("#artist-albums-list");
 const $artistTop = document.querySelector("#artist-top-list");
 
-fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/artist/${artistId}`)
+fetch(`https://api.deezer.com/artist/${artistId}`)
     .then(response => response.json())
     .then(result => {       
         // console.log(result); 

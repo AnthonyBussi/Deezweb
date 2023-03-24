@@ -13,7 +13,7 @@ const $nbTracks = document.querySelector("#nb-tracks");
 const $duration = document.querySelector("#duration");
 
 
-fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/playlist/${playlistId}`)
+fetch(`https://api.deezer.com/playlist/${playlistId}`)
     .then(response => response.json())
     .then(result => {        
         console.log(result);

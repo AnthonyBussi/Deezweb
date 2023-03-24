@@ -8,7 +8,7 @@ const loader = document.querySelector("#loader");
 
 const $trackInfo = document.querySelector("#track-info");
 
-fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/track/${trackId}`)
+fetch(`https://api.deezer.com/track/${trackId}`)
     .then(response => response.json())
     .then(result => {        
         document.title = result.title + " - Deezweb";

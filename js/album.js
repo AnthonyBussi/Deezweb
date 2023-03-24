@@ -9,7 +9,7 @@ const loader = document.querySelector("#loader");
 const $albumInfo = document.querySelector("#album-info");
 const $nbTracks = document.querySelector("#nb-tracks");
 
-fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/album/${albumId}`)
+fetch(`https://api.deezer.com/album/${albumId}`)
     .then(response => response.json())
     .then(result => {        
         document.title = result.title + " - Deezweb";

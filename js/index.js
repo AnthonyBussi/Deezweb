@@ -134,7 +134,7 @@ let topPodcasts = document.querySelector('#topPodcasts');
 //     }
 // });
 
-fetch(`https://mycorsproxy-app.herokuapp.com/https://api.deezer.com/chart/`)
+fetch(`https://api.deezer.com/chart/`)
     .then(response => response.json())
     .then(result => {
 
